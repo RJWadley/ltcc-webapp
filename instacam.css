@@ -19,6 +19,7 @@
 	overflow: auto;
 	transition: 0.1s ease-in;
 	transform: translateX(-82.5%);
+	z-index: 100;
 }
 
 .sidebar:hover {
@@ -91,6 +92,7 @@
 	display: flex;
 	width: 100%;
 	overflow: hidden;
+	z-index: 90;
 }
 
 .qr-stop {
