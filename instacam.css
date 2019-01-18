@@ -18,7 +18,7 @@
 	justify-content: flex-start;
 	overflow: auto;
 	transition: 0.1s ease-in;
-	transform: translateX(-82%);
+	transform: translateX(-82.5%);
 }
 
 .sidebar:hover {
