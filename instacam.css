@@ -10,15 +10,25 @@
 	background: #eceff1;
 	min-width: 250px;
 	display: flex;
+	position:absolute;
+	top:0;
+	left:0;
+	min-height: 100%;
 	flex-direction: column;
 	justify-content: flex-start;
 	overflow: auto;
+	transition: 0.1s ease-in;
+	transform: translateX(-82%);
+}
+
+.sidebar:hover {
+	transform: translateX(0%);
 }
 
 .sidebar h2 {
 	font-weight: normal;
 	font-size: 1.0rem;
-	background: #607d8b;
+	background: #9c1b42;
 	color: #fff;
 	padding: 10px;
 	margin: 0;
@@ -91,4 +101,8 @@
 	width: 100%;
 	background-color: #d3dade;
 	border: none;
+}
+
+.sidebar-menu-icon {
+	float: right;
 }

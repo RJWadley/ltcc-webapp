@@ -2,7 +2,7 @@
 $("document").ready(function() {
 $('.qr-start').click(function() {
 	$('.qr-container').show();
-	app.start();
+	app.run();
 });
 $('.qr-stop').click(function() {
 	$('.qr-container').hide();
