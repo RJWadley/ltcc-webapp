@@ -1,7 +1,7 @@
 {
   "name": "LTCC",
   "lang": "en-US",
-  "start_url": "/",
+  "start_url": "/ltcc-webapp",
   "display": "standalone",
   "theme_color": "#9c1b42",
   "icons": [
