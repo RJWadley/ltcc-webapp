@@ -21,6 +21,10 @@ body {
 	padding: 10px;
 }
 
+.grid-area-logo {
+	max-width: 100%;
+}
+
 header {
 	background-color: white;
 	margin-bottom: 5px;
