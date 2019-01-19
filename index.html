@@ -5,10 +5,19 @@
 <head>
 	<meta charset="utf-8">
 
+	<script>
+		// Check that service workers are registered
+		if ('serviceWorker' in navigator) {
+			// Use the window load event to keep the page load performant
+			navigator.serviceWorker.register('/ltcc-webapp/sw.js', {
+				scope: '/ltcc-webapp/sw.js'
+			});
+		}
+	</script>
+
 	<title>LTCC</title>
 	<meta name="description" content="A task chart">
 	<meta name="author" content="Robert Wadley">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="instacam.css">
@@ -20,25 +29,24 @@
 	<script type="text/javascript" src="scripts/instascan.js"></script>
 
 	<!--[if lt IE 9]>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><link rel="manifest" href="manifest.json">
   <![endif]-->
-  
-  
-  <link rel="manifest" href="manifest.json">
 
-<meta name="mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="application-name" content="LTCC">
-<meta name="apple-mobile-web-app-title" content="LTCC">
-<meta name="theme-color" content="#9c1b42">
-<meta name="msapplication-navbutton-color" content="#9c1b42">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="msapplication-starturl" content="/">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<link rel="icon" href="images/ltcc-icon.png">
-<link rel="apple-touch-icon" href="images/ltcc-icon.png">
-  
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="LTCC">
+	<meta name="apple-mobile-web-app-title" content="LTCC">
+	<meta name="theme-color" content="#9c1b42">
+	<meta name="msapplication-navbutton-color" content="#9c1b42">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="icon" href="images/ltcc-icon.png">
+	<link rel="apple-touch-icon" href="images/ltcc-icon.png">
+
 </head>
 
 <body>
@@ -84,7 +92,7 @@
 					</transition-group>
 				</section>
 				<section>
-				<button class='qr-stop'>Exit Scanner</button>
+					<button class='qr-stop'>Exit Scanner</button>
 				</section>
 			</div>
 			<div class="preview-container" onclick="">
@@ -97,11 +105,10 @@
 	<script type="text/javascript" src="scripts/app.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script type="text/javascript" src="scripts/index.js"></script>
-	<script type="text/javascript" src="scripts/sw.js"></script>
 
-	<div class='android-install-prompt'> 
+	<div class='android-install-prompt'>
 	</div>
-	<div class='ios-install-prompt'> 
+	<div class='ios-install-prompt'>
 	</div>
 
 </body>
