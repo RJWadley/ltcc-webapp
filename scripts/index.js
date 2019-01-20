@@ -37,8 +37,15 @@ if (!/Mobi|Android/i.test(navigator.userAgent)) {
 	});
 
 	$(".installApp").click(function() {
-		addToHomescreen();
 		$(".install-prompt").fadeOut();
+		
+		    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream) {
+			$(".ios-install-prompt").slideDown();
+    } else {
+    	$(".android-install-prompt").slideDown();
+    }
+		
 	});
 
 	$(".installPromptClose").click(function() {
@@ -48,7 +55,10 @@ if (!/Mobi|Android/i.test(navigator.userAgent)) {
 
 	jQuery(".ltcc-logo").on("swipedown", function(event) {
 		screenfull.exit();
-		$(".install-prompt").show();
+		if (window.matchMedia('(display-mode: standalone)').matches) {
+			$(".install-prompt").show();
+		}
+
 
 	});
 	
