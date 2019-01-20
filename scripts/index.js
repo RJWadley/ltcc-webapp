@@ -38,6 +38,7 @@ if (!/Mobi|Android/i.test(navigator.userAgent)) {
 
 	$(".installApp").click(function() {
 		addToHomescreen();
+		$(".install-prompt").fadeOut();
 	});
 
 	$(".installPromptClose").click(function() {
