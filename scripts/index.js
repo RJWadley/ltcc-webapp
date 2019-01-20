@@ -51,6 +51,7 @@ if (!/Mobi|Android/i.test(navigator.userAgent)) {
 		$(".install-prompt").show();
 
 	});
-
+	
+	$('.install-prompt').css("opacity", "1")
 
 });
