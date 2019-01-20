@@ -19,14 +19,10 @@
 	<meta name="description" content="A task chart">
 	<meta name="author" content="Robert Wadley">
 	<!-- stylesheets -->
+	<link rel="stylesheet" type="text/css" href="addtohomescreen/addtohomescreen.css">
 	<link rel="stylesheet" href="style.css">
-	<link rel="stylesheet" href="instacam.css">
+	<link rel="stylesheet" href="instascan/instascan.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Raleway">
-	<!--scripts -->
-
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-	<script type="text/javascript" src="scripts/instascan.js"></script>
 
 	<!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
@@ -102,14 +98,26 @@
 
 	</div>
 
-	<script type="text/javascript" src="scripts/app.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script type="text/javascript" src="scripts/index.js"></script>
+	<div class='install-prompt'>
+		<button class="install-prompt-button goFullScreen">Go Full Screen</button>
+		<button class="install-prompt-button installApp">Add to Home Screen</button>
+		<button class="installPromptClose">&times</button>
+	</div>
+	
+	<div class="exit-fullscreen-prompt" >To exit fullscreen, swipe down from the LTCC logo.</div>
 
-	<div class='android-install-prompt'>
-	</div>
-	<div class='ios-install-prompt'>
-	</div>
+	<!--scripts -->
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
+	<script type="text/javascript" src="instascan/instascan.js"></script>
+	<script type="text/javascript" src="instascan/app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.0.0/screenfull.min.js"></script>
+	<script src="scripts/jquerymobile-swipeupdown.js"></script>
+	<script type="text/javascript" src="scripts/index.js"></script>
+	<script src="addtohomescreen/addtohomescreen.min.js"></script>
 
 </body>
 

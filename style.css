@@ -54,3 +54,68 @@ header {
 	background-color: #9c1b42;
 	display: none;
 }
+
+@media all and (display-mode: standalone) {
+  .install-prompt {
+    display: none;
+  }
+}
+
+.install-prompt {
+	width: 100%;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	background-color: whitesmoke;
+	-webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+		-moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+		box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+	display: flex;
+	justify-content: center;
+	z-index: 200;
+}
+
+.install-prompt-button {
+	background-color: dodgerblue;
+	color: white;
+	margin: 5px;
+	padding: 10px;
+	border: none;
+	border-radius: 5px;
+	font-weight: bold;
+-webkit-box-shadow: 0px 5px 0px 0px rgba(0,128,255,1);
+-moz-box-shadow: 0px 5px 0px 0px rgba(0,128,255,1);
+box-shadow: 0px 5px 0px 0px rgba(0,128,255,1);
+margin-bottom: 10px;
+}
+
+.install-prompt-button:active {
+	transform: translateY(5px);
+	-webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+.installPromptClose {
+	background: transparent;
+	font-size: 30px;
+	color: #aaa;
+	border: none;
+}
+
+.installPromptClose:focus, .install-prompt-button:focus {
+	outline:0;
+}
+
+.exit-fullscreen-prompt {
+	display: none;
+	position:fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+	background-color: rgba(0,0,0,0.7);
+	color: white;
+	padding: 20px;
+	text-align: center;
+	border-radius: 500px;
+}
