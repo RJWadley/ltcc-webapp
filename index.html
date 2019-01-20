@@ -19,6 +19,7 @@
 	<meta name="description" content="A task chart">
 	<meta name="author" content="Robert Wadley">
 	<!-- stylesheets -->
+	<link rel="stylesheet" href="preloader/preloader.css">
 	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="instascan/instascan.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Raleway">
@@ -41,33 +42,66 @@
 
 	<link rel="icon" href="images/ltcc-icon.png">
 	<link rel="apple-touch-icon" href="images/ltcc-icon.png">
-
 </head>
 
 <body>
-	<header>
-		<img class="ltcc-logo" src="images/ltcc_logo.jpg" alt="Lebanon Technology and Career Center">
-	</header>
-	<div class="grid-container">
-		<a class="qr-start grid-area">
-			<div class="grid-area-container">
-				<img class="grid-area-logo" src="images/QR-code.png" alt="QR Scanner">
-				<h2>QR Scanner</h2>
+
+	<preloader class='preloader'>
+		<div class="lds-css ng-scope">
+			<div class="lds-spinner" style="100%;height:100%">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
 			</div>
-		</a>
-		<div class="grid-area">
-
 		</div>
-		<div class="grid-area">asdfjkl;</div>
-		<div class="grid-area">asdfjkl;</div>
-	</div>
+	</preloader>
 
-	<div class='qr-container'>
-		<div id="app">
-			<div class="sidebar" onclick="">
-				<section class="cameras">
-					<h2>Cameras<span class="sidebar-menu-icon"><i class="material-icons">menu</i></span></h2>
-					<ul>
+
+<header>
+	<img class="ltcc-logo" src="images/ltcc_logo.jpg" alt="Lebanon Technology and Career Center">
+</header>
+<div class="grid-container">
+	<a class="qr-start grid-area">
+
+		<img class="grid-area-logo" src="https://png.icons8.com/ios/qr-code/9c1b42/256" alt="QR Scanner">
+		<h2>QR Scanner</h2>
+
+	</a>
+	<a class="qr-start grid-area">
+		
+		<img class="grid-area-logo" src="https://png.icons8.com/ios/map/9c1b42/256" alt="Event Map">
+		<h2>Event Map</h2>
+
+	</a>
+	<a class="qr-start grid-area">
+		
+		<img class="grid-area-logo" src="https://png.icons8.com/ios/list/9c1b42/256" alt="Programs">
+		<h2>Programs</h2>
+
+	</a>
+	<a class="qr-start grid-area">
+		
+		<img class="grid-area-logo" src="https://png.icons8.com/ios/calendar/9c1b42/256" alt="Schedule">
+		<h2>Schedule</h2>
+
+	</a>
+</div>
+
+<div class='qr-container'>
+	<div id="app">
+		<div class="sidebar" onclick="">
+			<section class="cameras">
+				<h2>Cameras<span class="sidebar-menu-icon"><i class="material-icons">menu</i></span></h2>
+				<ul>
 						<li v-if="cameras.length === 0" class="empty">No cameras found</li>
 						<li v-for="camera in cameras">
 							<span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">{{ formatName(camera.name) }}</span>
@@ -102,12 +136,18 @@
 		<button class="install-prompt-button installApp">Add to Home Screen</button>
 		<button class="installPromptClose">&times</button>
 	</div>
-	
-	<div class="exit-fullscreen-prompt" >To exit fullscreen, swipe down from the LTCC logo.</div>
-	
-	<div class="android-install-prompt"><p>Press &#8942; and tap 'Add to Home Screen'</p></div>
-	<div class="ios-install-prompt"><p>Press <img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action.png" alt="share" /> and tap 'Add to Home Screen'</p></div>
-	
+
+	<div class="exit-fullscreen-prompt">To exit fullscreen, swipe down from the LTCC logo.</div>
+
+	<div class="android-install-prompt">
+		<p>Press &#8942; and tap 'Add to Home Screen'</p>
+	</div>
+	<div class="ios-install-prompt">
+		<p>Press <img src="https://developer.apple.com/design/human-interface-guidelines/ios/images/icons/navigation_bar_toobar_icons/Navigation_Action.png" alt="share" /> and tap 'Add to Home Screen'</p>
+	</div>
+
+
+
 	<!--scripts -->
 
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
