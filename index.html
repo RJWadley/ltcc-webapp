@@ -66,42 +66,42 @@
 	</preloader>
 
 
-<header>
-	<img class="ltcc-logo" src="images/ltcc_logo.jpg" alt="Lebanon Technology and Career Center">
-</header>
-<div class="grid-container">
-	<a class="qr-start grid-area">
+	<header>
+		<img class="ltcc-logo" src="images/ltcc_logo.jpg" alt="Lebanon Technology and Career Center">
+	</header>
+	<div class="grid-container">
+		<a class="qr-start grid-area">
 
-		<img class="grid-area-logo" src="https://png.icons8.com/ios/qr-code/9c1b42/256" alt="QR Scanner">
-		<h2>QR Scanner</h2>
+			<img class="grid-area-logo" src="https://png.icons8.com/ios/qr-code/9c1b42/256" alt="QR Scanner">
+			<h2>QR Scanner</h2>
 
-	</a>
-	<a class="qr-start grid-area">
-		
-		<img class="grid-area-logo" src="https://png.icons8.com/ios/map/9c1b42/256" alt="Event Map">
-		<h2>Event Map</h2>
+		</a>
+		<a class="grid-area">
 
-	</a>
-	<a class="qr-start grid-area">
-		
-		<img class="grid-area-logo" src="https://png.icons8.com/ios/list/9c1b42/256" alt="Programs">
-		<h2>Programs</h2>
+			<img class="grid-area-logo" src="https://png.icons8.com/ios/map/9c1b42/256" alt="Event Map">
+			<h2>Event Map</h2>
 
-	</a>
-	<a class="qr-start grid-area">
-		
-		<img class="grid-area-logo" src="https://png.icons8.com/ios/calendar/9c1b42/256" alt="Schedule">
-		<h2>Schedule</h2>
+		</a>
+		<a class="grid-area">
 
-	</a>
-</div>
+			<img class="grid-area-logo" src="https://png.icons8.com/ios/list/9c1b42/256" alt="Programs">
+			<h2>Programs</h2>
 
-<div class='qr-container'>
-	<div id="app">
-		<div class="sidebar" onclick="">
-			<section class="cameras">
-				<h2>Cameras<span class="sidebar-menu-icon"><i class="material-icons">menu</i></span></h2>
-				<ul>
+		</a>
+		<a class="grid-area">
+
+			<img class="grid-area-logo" src="https://png.icons8.com/ios/calendar/9c1b42/256" alt="Schedule">
+			<h2>Schedule</h2>
+
+		</a>
+	</div>
+
+	<div class='qr-container'>
+		<div id="app">
+			<div class="sidebar" onclick="">
+				<section class="cameras">
+					<h2>Cameras<span class="sidebar-menu-icon"><i class="material-icons">menu</i></span></h2>
+					<ul>
 						<li v-if="cameras.length === 0" class="empty">No cameras found</li>
 						<li v-for="camera in cameras">
 							<span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">{{ formatName(camera.name) }}</span>
@@ -128,8 +128,9 @@
 				<video id="preview" playsinline></video>
 			</div>
 		</div>
-
 	</div>
+
+
 
 	<div class='install-prompt'>
 		<button class="install-prompt-button goFullScreen">Go Full Screen</button>
@@ -137,7 +138,7 @@
 		<button class="installPromptClose">&times</button>
 	</div>
 
-	<div class="exit-fullscreen-prompt">To exit fullscreen, swipe down from the LTCC logo.</div>
+	<div class="exit-fullscreen-prompt">Swipe down from the LTCC logo to exit full screen</div>
 
 	<div class="android-install-prompt">
 		<p>Press &#8942; and tap 'Add to Home Screen'</p>
