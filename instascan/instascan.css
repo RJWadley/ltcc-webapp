@@ -1,9 +1,22 @@
+html, body {
+	font-family: 'Raleway', sans-serif;
+}
+
 #app {
 	background: #263238;
 	display: flex;
 	align-items: stretch;
 	justify-content: stretch;
 	height: 100%;
+}
+
+.qr-container {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: #9c1b42;
 }
 
 .sidebar {
@@ -121,6 +134,9 @@ user-select: none; /* Standard */
 	padding: 10px;
 	width: 100%;
 	background-color: #d3dade;
+	text-decoration: none;
+	color: black;
+	text-align: center;
 	border: none;
 }
 

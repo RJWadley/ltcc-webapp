@@ -6,7 +6,7 @@ var app = new Vue({
     cameras: [],
     scans: []
   },
-  methods: {  run: function () {
+  mounted: function () {
     var self = this;
     self.scanner = new Instascan.Scanner({ video: document.getElementById('preview'), scanPeriod: 5, mirror: false });
     self.scanner.addListener('scan', function (content, image) {
@@ -48,5 +48,5 @@ setTimeout(
     stop: function() {
    	  this.scanner.stop();
     }
-  }
+  
 });

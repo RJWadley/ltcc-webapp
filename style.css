@@ -21,6 +21,12 @@ body{
 	padding: 10px;
     text-align: center;
     height: calc(100% - 20px);
+    transition: 0.1s ease-in;
+}
+
+.grid-area:active {
+	background-color: #eee;
+	transform: scale(0.9);
 }
 
 .grid-area-logo {
@@ -33,6 +39,11 @@ body{
 
 .grid-area h2 {
 	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: black
 }
 
 header {
@@ -50,15 +61,6 @@ header {
   	background-size:contain;
 }
 
-.qr-container {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	background-color: #9c1b42;
-	display: none;
-}
 
 @media all and (display-mode: standalone) {
 	.install-prompt {
