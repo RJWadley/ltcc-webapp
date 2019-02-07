@@ -12,16 +12,6 @@ $("document").ready(function() {
 		$(".install-prompt").hide();
 	}
 
-	$('.qr-start').click(function() {
-		$('.qr-container').show();
-		app.run();
-		history.pushState({}, 'QR');
-	});
-	$('.qr-stop').click(function() {
-		$('.qr-container').hide();
-		app.stop();
-	});
-
 	$('.goFullScreen').click(() => {
 		if (screenfull.enabled) {
 			screenfull.request();
