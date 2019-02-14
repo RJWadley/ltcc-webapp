@@ -5,24 +5,36 @@
 <head>
 	<meta charset="utf-8">
 
-	<title>LTCC QR Scanner</title>
-	<meta name="description" content="A QR Scanner">
+	<title>LTCC Programs</title>
+	<meta name="description" content="LTCC Programs">
 	<meta name="author" content="Robert Wadley">
 	<!-- stylesheets -->
 	<link rel="stylesheet" href="preloader/preloader.css">
-	<link rel="stylesheet" href="instascan/instascan.css">
+	<link rel="stylesheet" href="programs/programs.css">
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Raleway">
 
 	<!--[if lt IE 9]>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script>
   <![endif]-->
+	<link rel="manifest" href="/ltcc-webapp/manifest.json">
+
+	<meta name="mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="application-name" content="LTCC">
+	<meta name="apple-mobile-web-app-title" content="LTCC">
+	<meta name="theme-color" content="#9c1b42">
+	<meta name="msapplication-navbutton-color" content="#9c1b42">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+	<meta name="msapplication-starturl" content="/">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<link rel="icon" href="images/ltcc-icon.png">
 	<link rel="apple-touch-icon" href="images/ltcc-icon.png">
 </head>
 
 <body>
-	
+
 	<preloader class='preloader'>
 		<div class="lds-css ng-scope">
 			<div class="lds-spinner" style="100%;height:100%">
@@ -41,50 +53,43 @@
 			</div>
 		</div>
 	</preloader>
-	
-	<div class='qr-container'>
-		<div id="app">
-			<div class="sidebar" onclick="">
-				<section class="cameras">
-					<h2>Cameras<span class="sidebar-menu-icon"><i class="material-icons">menu</i></span></h2>
-					<ul>
-						<li v-if="cameras.length === 0" class="empty">No cameras found</li>
-						<li v-for="camera in cameras">
-							<span v-if="camera.id == activeCameraId" :title="formatName(camera.name)" class="active">{{ formatName(camera.name) }}</span>
-							<span v-if="camera.id != activeCameraId" :title="formatName(camera.name)">
-                <a @click.stop="selectCamera(camera)">{{ formatName(camera.name) }}</a>
-              </span>
-						</li>
-					</ul>
-				</section>
-				<section class="scans">
-					<h2>Scans</h2>
-					<ul v-if="scans.length === 0">
-						<li class="empty">No scans yet</li>
-					</ul>
-					<transition-group name="scans" tag="ul">
-						<li v-for="scan in scans" :key="scan.date" :title="scan.content">{{ scan.content }}</li>
-					</transition-group>
-				</section>
-				<section>
-					<a href="index.html" class='qr-stop'>Exit Scanner</a>
-				</section>
-			</div>
-			<div class="preview-container" onclick="">
-				<video id="preview" playsinline></video>
-			</div>
+
+
+	<header>
+		<img class="ltcc-logo" src="images/ltcc_logo.jpg" alt="Lebanon Technology and Career Center">
+	</header>
+	<div class="programs-container">
+		<div class="programs-list">
+
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/agriculturenatural-resources-career-cluster">Agriculture Education</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/automotive-technology">Automotive Technology</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/biomedical-pltw">Biomedical (PLTW)</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/business-management">Business Management (HSOB)</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/collision-repair-refinishing">Collision Repair &amp; Refinishing</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/construction-technology">Construction Technology</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/computer-repair-networking">Computer Repair &amp; Networking</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/engineering-pltw">Engineering (PLTW)</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/family-consumer-science">Family &amp; Consumer Science</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/machining-technology">Machining Technology</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/teaching-professions">Teaching Professions</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/welding-technology">Welding Technology</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/english-iv-integrated-math-iv-integrated">English IV Integrated &amp; Math IV Integrated</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/counseling">Counseling</a>
+			<a class='grid-area' href="https://sites.google.com/lebanon.k12.mo.us/ltcc/academics/special-resource-education">Special &amp; Resource Education</a>
 		</div>
 	</div>
 
-
 	<!--scripts -->
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/webrtc-adapter/3.3.3/adapter.min.js"></script>
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.1.10/vue.min.js"></script>
-	<script type="text/javascript" src="instascan/instascan.js"></script>
-	<script type="text/javascript" src="instascan/app.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script>$('.preloader').fadeOut();</script>
+	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/screenfull.js/4.0.0/screenfull.min.js"></script>
+	<script src="scripts/jquerymobile-swipeupdown.js"></script>
+	<script type="text/javascript" src="programs/programs.js"></script>
+	<script>
+		$('.preloader').fadeOut();
+		$.mobile.autoInitializePage = false;
+	</script>
 
 </body>
 
