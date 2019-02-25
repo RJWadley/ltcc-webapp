@@ -87,16 +87,18 @@
 			<h2>Programs</h2>
 
 		</a>
-		<a class="grid-area">
+		<div class="grid-area nothing" onclick="$('.videomodal').addClass('showvideo'); $('.videclose').addClass('showvideo')">
 
-			<img class="grid-area-logo" src="https://png.icons8.com/ios/calendar/9c1b42/256" alt="Schedule">
-			<h2>Schedule</h2>
+			<img class="grid-area-logo" src="https://png.icons8.com/ios/video/9c1b42/256" alt="Icon">
+			<h2>Course Overview Video</h2>
 
-		</a>
+		</div>
 	</div>
-
-	
-
+    
+    <div class="videomodal">
+	   <iframe  width="560" height="315" src="https://www.youtube.com/embed/cN9Xhtb345w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+       <h1 onclick="$('.videomodal').removeClass('showvideo'); $('.videclose').removeClass('showvideo')" class='videoclose'>&times</h1>
+    </div>
 
 	<div class='install-prompt'>
 		<button class="install-prompt-button goFullScreen">Go Full Screen</button>
