@@ -5,8 +5,12 @@ $.mobile.autoInitializePage = false;
 $("document").ready(function() {
 
 	if (!/Mobi|Android/i.test(navigator.userAgent)) {
-		$(".install-prompt").hide();
+		$(".goFullscreen").hide();
 	}
+	
+	if (navigator.userAgent.match(/(iPod|iPhone|iPad)/)) {
+		$(".install-prompt").hide();
+}
 
 	if (window.matchMedia('(display-mode: standalone)').matches) {
 		$(".install-prompt").hide();
@@ -63,6 +67,8 @@ $("document").ready(function() {
 
 		}
 	});
+	
+	
 
 	$('.preloader').fadeOut();
 	$(".global-content").show();

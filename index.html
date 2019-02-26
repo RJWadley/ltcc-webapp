@@ -6,13 +6,19 @@
 	<meta charset="utf-8">
 
 	<script>
-		// Check that service workers are registered
-		if ('serviceWorker' in navigator) {
-			// Use the window load event to keep the page load performant
-			navigator.serviceWorker.register('/ltcc-webapp/sw.js', {
-				scope: '/ltcc-webapp/sw.js'
-			});
-		}
+//This is the "Offline copy of pages" service worker
+
+//Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
+if (navigator.serviceWorker.controller) {
+  console.log('[PWA Builder] active service worker found, no need to register')
+} else {
+  //Register the ServiceWorker
+  navigator.serviceWorker.register('sw.js', {
+    scope: './ltcc-webapp/'
+  }).then(function(reg) {
+    console.log('Service worker has been registered for scope:'+ reg.scope);
+  });
+}
 	</script>
 
 	<title>LTCC</title>
@@ -90,7 +96,7 @@
 		<div class="grid-area nothing" onclick="$('.videomodal').addClass('showvideo'); $('.videclose').addClass('showvideo')">
 
 			<img class="grid-area-logo" src="https://png.icons8.com/ios/video/9c1b42/256" alt="Icon">
-			<h2>Course Overview Video</h2>
+			<h2>Overview Video</h2>
 
 		</div>
 	</div>
@@ -121,7 +127,7 @@
 
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="//code.jquery.com/mobile/1.5.0-alpha.1/jquery.mobile-1.5.0-alpha.1.min.js"></script>
-	<script src="https://raw.githubusercontent.com/sindresorhus/screenfull.js/gh-pages/dist/screenfull.min.js"></script>
+	<script src="scripts/screenfull.js"></script>
 	<script src="scripts/jquerymobile-swipeupdown.js"></script>
 	<script type="text/javascript" src="scripts/index.js"></script>
 
