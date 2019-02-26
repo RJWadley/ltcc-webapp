@@ -5,7 +5,7 @@
 <head>
 	<meta charset="utf-8">
 
-	<script>
+	<!--cript>
 //This is the "Offline copy of pages" service worker
 
 //Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
@@ -19,7 +19,7 @@ if (navigator.serviceWorker.controller) {
     console.log('Service worker has been registered for scope:'+ reg.scope);
   });
 }
-	</script>
+	</script-->
 
 	<title>LTCC</title>
 	<meta name="description" content="LTCC Web Application">
@@ -93,7 +93,7 @@ if (navigator.serviceWorker.controller) {
 			<h2>Programs</h2>
 
 		</a>
-		<div class="grid-area nothing" onclick="$('.videomodal').addClass('showvideo'); $('.videclose').addClass('showvideo')">
+		<div class="grid-area nothing" href="video.html">
 
 			<img class="grid-area-logo" src="https://png.icons8.com/ios/video/9c1b42/256" alt="Icon">
 			<h2>Overview Video</h2>
@@ -101,11 +101,6 @@ if (navigator.serviceWorker.controller) {
 		</div>
 	</div>
     
-    <div class="videomodal">
-	   <iframe  width="560" height="315" src="https://www.youtube.com/embed/cN9Xhtb345w" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-       <h1 onclick="$('.videomodal').removeClass('showvideo'); $('.videclose').removeClass('showvideo')" class='videoclose'>&times</h1>
-    </div>
-
 	<div class='install-prompt'>
 		<button class="install-prompt-button goFullScreen">Go Full Screen</button>
 		<button class="install-prompt-button installApp">Add to Home Screen</button>
