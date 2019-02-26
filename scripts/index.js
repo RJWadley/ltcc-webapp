@@ -15,6 +15,10 @@ $("document").ready(function() {
 	if (window.matchMedia('(display-mode: standalone)').matches) {
 		$(".install-prompt").hide();
 	}
+	
+	if (!(/Mobi|Android/i.test(navigator.userAgent))) {
+		$(".install-prompt").hide();
+	}
 
 	$('.goFullScreen').click(() => {
 		if (screenfull.enabled) {
